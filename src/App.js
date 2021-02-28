@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Sitebar from './home/Navbar';
 import Auth from './auth/Auth'
+import {
+  BrowserRouter as Router,
+} from 'react-router-dom';
+
 
 
 function App() {
   const [sessionToken, setSessionToken] = useState('');
 
   useEffect(() => {
-    if (localStorage.getItem('token')){
+    if (localStorage.getItem('token')) {
       setSessionToken(localStorage.getItem('token'));
     }
   }, [])
@@ -17,10 +21,22 @@ function App() {
     setSessionToken(newToken)
     console.log(sessionToken);
   }
+
+  // const clearToken = () => {
+  //   localStorage.clear();
+  //   setSessionToken('');
+  // }
+  // const protectedViews = () => {
+  //   return (sessionToken === localStorage.getItem('token') ? <WorkoutIndex token={sessionToken}/> : <Auth updateToken={updateToken}/> )
+  // }
+
   return (
+    
     <div>
-      <Sitebar/>
-      <Auth updateToken={updateToken}/>
+      <Router>
+          <Sitebar />
+          <Auth updateToken={updateToken} />
+      </Router>
     </div>
   );
 }
