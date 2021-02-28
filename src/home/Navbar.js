@@ -1,27 +1,32 @@
 import React, { useState } from 'react'
 import {
-    Route,
-    Link,
-    Switch
-} from 'react-router-dom'
-import Search from '../components/Search'
-import {
+    Collapse,
     Navbar,
     NavbarBrand,
+    NavbarToggler,
+    Nav,
+    NavItem,
+    Button
 } from 'reactstrap';
 
 const Sitebar = (props) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const toggle = () => {
+        let newIsOpen = !isOpen;
+        setIsOpen(newIsOpen)
+    }
     return (
-        <div>
-            <Navbar color="faded" light expand="md">
-                <NavbarBrand href="/">Gather</NavbarBrand>
-                <NavbarBrand href="/search">Search</NavbarBrand>
-
-            </Navbar>
-            <Switch>
-                <Route exact path="/search"><Search /></Route>
-            </Switch>
-        </div>
+        <Navbar color="faded" light expand="md">
+            <NavbarBrand href="/">Gather</NavbarBrand>
+            <NavbarToggler onClick={toggle}/>
+            <Collapse isOpen={isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+                <NavItem>
+                    <Button onClick={props.clickLogout}>Logout</Button>
+                </NavItem>
+            </Nav>
+            </Collapse>
+        </Navbar>
     )
 }
 

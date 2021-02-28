@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Sitebar from './home/Navbar';
 import Auth from './auth/Auth'
-import {
-  BrowserRouter as Router,
-} from 'react-router-dom';
-
 
 
 function App() {
@@ -22,21 +18,15 @@ function App() {
     console.log(sessionToken);
   }
 
-  // const clearToken = () => {
-  //   localStorage.clear();
-  //   setSessionToken('');
-  // }
-  // const protectedViews = () => {
-  //   return (sessionToken === localStorage.getItem('token') ? <WorkoutIndex token={sessionToken}/> : <Auth updateToken={updateToken}/> )
-  // }
+  const clearToken = () => {
+    localStorage.clear();
+    setSessionToken('');
+  }
 
   return (
-    
     <div>
-      <Router>
-          <Sitebar />
-          <Auth updateToken={updateToken} />
-      </Router>
+      <Sitebar />
+      <Auth updateToken={updateToken} />
     </div>
   );
 }
