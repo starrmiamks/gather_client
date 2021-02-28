@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Sitebar from './home/Navbar';
 import Auth from './auth/Auth'
+import {
+  BrowserRouter as Router,
+} from 'react-router-dom';
+
 
 
 function App() {
   const [sessionToken, setSessionToken] = useState('');
 
   useEffect(() => {
-    if (localStorage.getItem('token')){
+    if (localStorage.getItem('token')) {
       setSessionToken(localStorage.getItem('token'));
     }
   }, [])
@@ -22,6 +26,7 @@ function App() {
     localStorage.clear();
     setSessionToken('')
   }
+
   return (
     <div>
       <Sitebar clickLogout={clearToken}/>
