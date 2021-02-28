@@ -22,21 +22,15 @@ function App() {
     console.log(sessionToken);
   }
 
-  // const clearToken = () => {
-  //   localStorage.clear();
-  //   setSessionToken('');
-  // }
-  // const protectedViews = () => {
-  //   return (sessionToken === localStorage.getItem('token') ? <WorkoutIndex token={sessionToken}/> : <Auth updateToken={updateToken}/> )
-  // }
+  const clearToken =()=> {
+    localStorage.clear();
+    setSessionToken('')
+  }
 
   return (
-    
     <div>
-      <Router>
-          <Sitebar />
-          <Auth updateToken={updateToken} />
-      </Router>
+      <Sitebar clickLogout={clearToken}/>
+      <Auth updateToken={updateToken}/>
     </div>
   );
 }
