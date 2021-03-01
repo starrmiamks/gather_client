@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Sitebar from './home/Navbar';
 import Auth from './auth/Auth'
-import {
-  BrowserRouter as Router,
-} from 'react-router-dom';
-
 
 
 function App() {
@@ -22,15 +18,15 @@ function App() {
     console.log(sessionToken);
   }
 
-  const clearToken =()=> {
+  const clearToken = () => {
     localStorage.clear();
     setSessionToken('')
   }
 
   return (
     <div>
-      <Sitebar clickLogout={clearToken}/>
-      <Auth updateToken={updateToken}/>
+      <Sitebar clickLogout={clearToken} />
+      <Auth updateToken={updateToken} />
     </div>
   );
 }
