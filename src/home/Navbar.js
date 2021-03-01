@@ -6,8 +6,19 @@ import {
     NavbarToggler,
     Nav,
     NavItem,
-    Button
+    Button,
+    NavLink
 } from 'reactstrap';
+import {
+    BrowserRouter,
+    Route,
+    Switch
+} from 'react-router-dom';
+import Search from '../components/Search';
+import Login from '../auth/Login';
+import Register from '../auth/Register';
+
+
 
 const Sitebar = (props) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -16,18 +27,41 @@ const Sitebar = (props) => {
         setIsOpen(newIsOpen)
     }
     return (
-        <Navbar color="faded" light expand="md">
-            <NavbarBrand href="/">Gather</NavbarBrand>
-            <NavbarToggler onClick={toggle}/>
-            <Collapse isOpen={isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-                <NavItem>
-                    <Button onClick={props.clickLogout}>Logout</Button>
-                </NavItem>
-            </Nav>
-            </Collapse>
-        </Navbar>
-    )
-}
+        <div>
+            <div>
+                <Navbar color="faded" light expand="md">
+                    <NavbarBrand href="/">GATHER</NavbarBrand>
+                    <NavbarToggler onClick={toggle} />
+                    <Collapse isOpen={isOpen} navbar>
+                        <Nav className="ml-auto" navbar>
+                            <NavItem>
+                                <NavLink href="/about/">What is Gather?</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/register/">Register</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/login/">Login</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/search/">Search</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <Button onClick={props.clickLogout}>Logout</Button>
+                            </NavItem>
+                        </Nav>
+                    </Collapse>
+                </Navbar>
+            </div>
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/login"><Login /></Route>
+                    <Route exact path="/register"><Register /></Route>
+                    <Route exact path="/search"><Search /></Route>
+                </Switch>
+            </BrowserRouter>
+        </div>
+    );
+};
 
 export default Sitebar;
