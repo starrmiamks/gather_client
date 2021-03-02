@@ -23,7 +23,7 @@ const Login = (props) => {
     return(
         <div>
             <Container>
-            <h1>Login</h1>
+            <h1>Gather Login</h1>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor="email">Email</Label>

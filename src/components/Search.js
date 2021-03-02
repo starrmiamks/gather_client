@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 //     NavbarBrand,
 // } from 'reactstrap';
 import {
-    Card, CardImg, CardBody,
-    CardTitle, Button
+    Container, CardImg, CardBody,
+    CardTitle, Button, Col, Row
 } from 'reactstrap';
 import SearchForm from './SearchForm'
 
@@ -44,30 +44,39 @@ const Search = (props) => {
     return (
         <div>
             <div className="search">
-                <h1 className="searchBox">SEARCH RECIPES</h1>
-                <input value={recipeSearch} onChange={e => setRecipeSearch(e.target.value)} placeholder="Enter search term" />
+                <h1 className="searchBox" >SEARCH RECIPES</h1>
+                <input class="rounded" style={{width: "25%"}} value={recipeSearch} onChange={e => setRecipeSearch(e.target.value)} placeholder="Enter search term" />
                 <br></br>
                 <br></br>
-                <Button onClick={fetcher} className="searchButton">Search</Button>
+                <Button type = "button" color = "primary" className = "searchButton, btn btn-primary" onClick={fetcher}>Search</Button>
             </div>
             <br></br>
             <br></br>
             <br></br>
             <br></br>
+                <Container id="recipe-grid-container">
+            <Row>
             {recipes.map(recipe => {
                 return (
-                    <div key={recipe.id}>
-                        <Card className="resultsCard" style={{width: "25%", height: "60%"}}>
-                            <CardImg top width="100%" src={recipe.image} alt="Recipe Image" />
-                            <CardBody>
+                    <Col key={recipe.id} lg="4" sm="6" xs="12" className="grid-column">
+                        
+
+                        <div className="resultsCard" 
+                        // style={{width: "25%", height: "60%"}}
+                        >
+                            <CardImg top width="25%" src={recipe.image} alt="Recipe Image" />
+                            <CardBody >
                                 <CardTitle tag="h5">{recipe.title}</CardTitle>
                                 <Button onClick={e => addRecipe(`${recipe.id}`, `${recipe.image}`, `${recipe.title}`)}>Add Recipe</Button>
                             </CardBody>
-                        </Card>
-                    </div>
+                        </div>
+                       
+                    </Col>
                 )
             })}
             <SearchForm addRecipe={addRecipe} />
+            </Row>
+            </Container>
         </div >
     );
 };
