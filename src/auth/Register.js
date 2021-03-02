@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import {Form, FormGroup, Label, Input, Button} from 'reactstrap'
+import {Form, FormGroup, Label, Input, Button, Container} from 'reactstrap'
+
 
 const Register = (props) => {
     const [email, setEmail] = useState('');
@@ -21,7 +22,8 @@ const Register = (props) => {
         
     return(
         <div>
-            <h1>Register</h1>
+            <Container>
+            <h1>Register</h1>            
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor="email">Email</Label>
@@ -33,9 +35,12 @@ const Register = (props) => {
                 title='Password must contain one number, one capital letter, and be 5-15 characters in length.'/>
                 </FormGroup>
                 <Button type="submit" color='success' >Register</Button>
-            </Form>
+                </Form> 
+                </Container>  
         </div>
     )
 }
+
+
 
 export default Register
