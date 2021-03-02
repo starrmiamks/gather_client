@@ -15,8 +15,10 @@ import {
     Switch
 } from 'react-router-dom';
 import Search from '../components/Search';
-import Login from '../auth/Login';
-import Register from '../auth/Register';
+
+//import Login from '../auth/Login';
+//import Register from '../auth/Register';
+import Favorites from '../components/Favorites';
 
 
 
@@ -37,14 +39,17 @@ const Sitebar = (props) => {
                             <NavItem>
                                 <NavLink href="/about/">What is Gather?</NavLink>
                             </NavItem>
-                            <NavItem>
+                            {/* <NavItem>
                                 <NavLink href="/register/">Register</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink href="/login/">Login</NavLink>
-                            </NavItem>
+                            </NavItem> */}
                             <NavItem>
                                 <NavLink href="/search/">Search</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/favorites/">Favorites</NavLink>
                             </NavItem>
                             <NavItem>
                                 <Button onClick={props.clickLogout}>Logout</Button>
@@ -55,9 +60,10 @@ const Sitebar = (props) => {
             </div>
             <BrowserRouter>
                 <Switch>
-                    <Route exact path="/login"><Login /></Route>
-                    <Route exact path="/register"><Register /></Route>
+                    {/* <Route exact path="/login"><Login /></Route>
+                    <Route exact path="/register"><Register /></Route> */}
                     <Route exact path="/search"><Search /></Route>
+                    <Route exact path="/favorites"><Favorites /></Route>
                 </Switch>
             </BrowserRouter>
         </div>
