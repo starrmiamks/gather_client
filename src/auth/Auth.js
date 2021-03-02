@@ -42,8 +42,8 @@ const Auth = (props) => {
 
                 <a href className={toggle ? "link" : ""} onClick={() => setToggle(!toggle)}>
                   {toggle
-                    ? "I already have an account. Login here."
-                    : "I do not have an account. Register here."}
+                    ? "Have an Account? Login here."
+                    : "New to Gather? Register here."}
                 </a>
             
               </div> 
