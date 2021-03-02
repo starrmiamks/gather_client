@@ -26,7 +26,7 @@ function App() {
   return (
     <div>
       <Sitebar clickLogout={clearToken} />
-      <Auth updateToken={updateToken} />
+      {/* <Auth updateToken={updateToken} /> */}
     </div>
   );
 }

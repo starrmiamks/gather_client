@@ -7,7 +7,7 @@ import {
     Card, CardImg, CardBody,
     CardTitle, Button
 } from 'reactstrap';
-import SearchForm from './SearchForm'
+import DisplayRecipe from './DisplayRecipe'
 
 const Search = () => {
     const [recipeSearch, setRecipeSearch] = useState("");
@@ -22,23 +22,23 @@ const Search = () => {
             })
     }
 
-    const addRecipe = (recipeId, imageURL, title) => {
-        console.log({ recipeId, imageURL, title })
-        fetch(`http://localhost:3000/favorites/add`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                favorites: { 
-                    recipeId: recipeId,
-                    imageURL: imageURL,
-                    title: title
-                }
-            })
-        })
-            .then(res => console.log(res.json()))
-    }
+    // const addRecipe = (recipeId, imageURL, title) => {
+    //     console.log({ recipeId, imageURL, title })
+    //     fetch(`http://localhost:3000/favorites/add`, {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify({
+    //             favorites: {
+    //                 recipeId: recipeId,
+    //                 imageURL: imageURL,
+    //                 title: title
+    //             }
+    //         })
+    //     })
+    //         .then(res => console.log(res.json()))
+    // }
 
     return (
         <div>
@@ -47,26 +47,33 @@ const Search = () => {
                 <input value={recipeSearch} onChange={e => setRecipeSearch(e.target.value)} placeholder="Enter search term" />
                 <br></br>
                 <br></br>
-                <Button onClick={fetcher} className="searchButton">Search</Button>
+                <Button outline color="info" onClick={fetcher} className="searchButton">Search</Button>
             </div>
             <br></br>
             <br></br>
             <br></br>
             <br></br>
-            {recipes.map(recipe => {
-                return (
-                    <div key={recipe.id}>
-                        <Card className="resultsCard" style={{width: "25%", height: "60%"}}>
-                            <CardImg top width="100%" src={recipe.image} alt="Recipe Image" />
-                            <CardBody>
-                                <CardTitle tag="h5">{recipe.title}</CardTitle>
-                                <Button onClick={e => addRecipe(`${recipe.id}`, `${recipe.image}`, `${recipe.title}`)}>Add Recipe</Button>
-                            </CardBody>
-                        </Card>
-                    </div>
-                )
-            })}
-            <SearchForm addRecipe={addRecipe} />
+            <div>
+                {recipes.previous && (<button onClick={() => setRecipes(recipes.previous)}>Previous</button>)}
+                {recipes.next && (<button onClick={() => setRecipes(recipes.next)}>Previous</button>)}
+                {recipes.map(recipe => {
+                    return (
+                        <div key={recipe.id}>
+                            <Card className="resultsCard" style={{ width: "25%", height: "60%" }}>
+                                <CardImg top width="100%" src={recipe.image} alt="Recipe Image" />
+                                <CardBody>
+                                    <CardTitle tag="h5">{recipe.title}</CardTitle>
+                                    {/* <Button onClick={e => addRecipe(`${recipe.id}`, `${recipe.image}`, `${recipe.title}`)}>Add Recipe</Button> */}
+                                    <Button outline color="info" onClick={e => <DisplayRecipe />}>View Recipe</Button>
+                                </CardBody>
+                            </Card>
+                            <br></br>
+                            <br></br>
+                        </div>
+                    )
+                })}
+            </div>
+            <DisplayRecipe />
         </div >
     );
 };
