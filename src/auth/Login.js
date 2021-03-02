@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import {Form, FormGroup, Label, Input, Button, Container} from 'reactstrap';
+
 
 const Login = (props) => {
     const [email, setEmail] = useState('');
@@ -21,7 +22,8 @@ const Login = (props) => {
     
     return(
         <div>
-            <h1>Login</h1>
+            <Container>
+            <h1>Gather Login</h1>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor="email">Email</Label>
@@ -33,8 +35,11 @@ const Login = (props) => {
                 </FormGroup>
                 <Button type="submit" color='success'>Login</Button>
             </Form>
+            </Container>
         </div>
     )
 }
+
+
 
 export default Login;

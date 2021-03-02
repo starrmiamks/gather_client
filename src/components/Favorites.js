@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {useState, useEffect} from 'react';
 import FavoritesCard from './FavoritesCard';
@@ -43,4 +44,8 @@ const Favorites = () => {
 }
 
 
-export default Favorites;
+
+
+
+ export default Favorites;
+
