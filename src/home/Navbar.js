@@ -15,8 +15,10 @@ import {
     Switch
 } from 'react-router-dom';
 import Search from '../components/Search';
-// import Login from '../auth/Login';
-// import Register from '../auth/Register';
+
+//import Login from '../auth/Login';
+//import Register from '../auth/Register';
+import Favorites from '../components/Favorites';
 
 
 
@@ -47,6 +49,9 @@ const Sitebar = (props) => {
                                 <NavLink href="/search/">Search</NavLink>
                             </NavItem>
                             <NavItem>
+                                <NavLink href="/favorites/">Favorites</NavLink>
+                            </NavItem>
+                            <NavItem>
                                 <Button onClick={props.clickLogout}>Logout</Button>
                             </NavItem>
                         </Nav>
@@ -58,6 +63,7 @@ const Sitebar = (props) => {
                     {/* <Route exact path="/login"><Login /></Route>
                     <Route exact path="/register"><Register /></Route> */}
                     <Route exact path="/search"><Search /></Route>
+                    <Route exact path="/favorites"><Favorites /></Route>
                 </Switch>
             </BrowserRouter>
         </div>
