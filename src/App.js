@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Sitebar from './home/Navbar';
 import Auth from './auth/Auth'
-import Favorites from './components/Favorites'
+// import Favorites from './components/Favorites'
 import "./App.css"
 
 function App() {
@@ -26,14 +26,14 @@ function App() {
 
   const protectedViews = () => {
     return sessionToken === localStorage.getItem("token") ? 
-      <Favorites token={sessionToken} />
+      <Sitebar token={sessionToken} clickLogout={clearToken} />
     : 
       <Auth updateToken={updateToken} />
   }
 
   return (
     <div>
-      <Sitebar clickLogout={clearToken}/>
+      {/* <Sitebar clickLogout={clearToken}/> */}
       {protectedViews ()}
       
     </div>

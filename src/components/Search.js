@@ -9,7 +9,7 @@ import {
 } from 'reactstrap';
 import SearchForm from './SearchForm'
 
-const Search = () => {
+const Search = (props) => {
     const [recipeSearch, setRecipeSearch] = useState("");
     const [recipes, setRecipes] = useState([]);
 
@@ -26,9 +26,10 @@ const Search = () => {
         console.log({ recipeId, imageURL, title })
         fetch(`http://localhost:3000/favorites/add`, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: new Headers ( {
+                "Content-Type": "application/json",
+                Authorization: localStorage.getItem("token"),
+            }),
             body: JSON.stringify({
                 favorites: { 
                     recipeId: recipeId,
