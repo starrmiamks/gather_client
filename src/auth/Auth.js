@@ -21,31 +21,29 @@ const Auth = (props) => {
       <div id='auth'>
            
             {toggle ? (
-            
-                // <Col md="6" className="login-col">
-                    <Login updateToken={props.updateToken}
-                    setPassword={setPassword}
-                    setUsername={setEmail}
-                    username={email}
-                    password={password}/>
-                // </Col> 
+             <Register updateToken={props.updateToken}
+             setPassword={setPassword}
+             setUsername={setEmail}
+             username={email}
+             password={password}
+             />     
+
                 ):      
                 (
-                // <Col md="6">
-                    <Register updateToken={props.updateToken}
-                    setPassword={setPassword}
-                    setUsername={setEmail}
-                    username={email}
-                    password={password}
-                    />
-                // </Col>
+                  <Login updateToken={props.updateToken}
+                  setPassword={setPassword}
+                  setUsername={setEmail}
+                  username={email}
+                  password={password}/>
+                   
+                
                 ) }
                 {/* <Button className="btn" color="success" size="small" onClick={toggle ? handleSubmit: handleHotdog}>Submit</Button> */}
 
                 <a href className={toggle ? "link" : ""} onClick={() => setToggle(!toggle)}>
                   {toggle
-                    ? "I do not have an account. Register here."
-                    : "I already have an account. Login here."}
+                    ? "I already have an account. Login here."
+                    : "I do not have an account. Register here."}
                 </a>
             
               </div> 
