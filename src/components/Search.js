@@ -8,6 +8,7 @@ import {
     CardTitle, Button, Col, Row
 } from 'reactstrap';
 import SearchForm from './SearchForm'
+import DisplayRecipe from './DisplayRecipe'
 
 const Search = (props) => {
     const [recipeSearch, setRecipeSearch] = useState("");
@@ -26,12 +27,11 @@ const Search = (props) => {
         console.log({ recipeId, imageURL, title })
         fetch(`http://localhost:3000/favorites/add`, {
             method: "POST",
-            headers: new Headers ( {
-                "Content-Type": "application/json",
-                Authorization: localStorage.getItem("token"),
-            }),
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify({
-                favorites: { 
+                favorites: {
                     recipeId: recipeId,
                     imageURL: imageURL,
                     title: title
@@ -48,8 +48,10 @@ const Search = (props) => {
                 <input class="rounded" style={{width: "25%"}} value={recipeSearch} onChange={e => setRecipeSearch(e.target.value)} placeholder="Enter search term" />
                 <br></br>
                 <br></br>
-                <Button type = "button" color = "primary" className = "searchButton" onClick={fetcher}>Search</Button>
-                
+
+                {/* <Button type = "button" color = "primary" className = "searchButton, btn btn-primary" onClick={fetcher}>Search</Button> */}
+                <Button outline color="info" onClick={fetcher}>Search</Button>
+
             </div>
             <br></br>
             <br></br>
