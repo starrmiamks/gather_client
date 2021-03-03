@@ -24,6 +24,7 @@ function App() {
     setSessionToken('')
   }
 
+  
   const protectedViews = () => {
     return sessionToken === localStorage.getItem("token") ? 
       <Sitebar token={sessionToken} clickLogout={clearToken} />
