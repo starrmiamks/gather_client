@@ -7,6 +7,7 @@ import {
     Container, CardImg, CardBody,
     CardTitle, Button, Col, Row
 } from 'reactstrap';
+import SearchForm from './SearchForm'
 import DisplayRecipe from './DisplayRecipe'
 
 const Search = (props) => {
@@ -22,23 +23,23 @@ const Search = (props) => {
             })
     }
 
-    // const addRecipe = (recipeId, imageURL, title) => {
-    //     console.log({ recipeId, imageURL, title })
-    //     fetch(`http://localhost:3000/favorites/add`, {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify({
-    //             favorites: {
-    //                 recipeId: recipeId,
-    //                 imageURL: imageURL,
-    //                 title: title
-    //             }
-    //         })
-    //     })
-    //         .then(res => console.log(res.json()))
-    // }
+    const addRecipe = (recipeId, imageURL, title) => {
+        console.log({ recipeId, imageURL, title })
+        fetch(`http://localhost:3000/favorites/add`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                favorites: {
+                    recipeId: recipeId,
+                    imageURL: imageURL,
+                    title: title
+                }
+            })
+        })
+            .then(res => console.log(res.json()))
+    }
 
     return (
         <div>
@@ -47,7 +48,8 @@ const Search = (props) => {
                 <input class="rounded" style={{width: "25%"}} value={recipeSearch} onChange={e => setRecipeSearch(e.target.value)} placeholder="Enter search term" />
                 <br></br>
                 <br></br>
-                <Button type = "button" color = "primary" className = "searchButton, btn btn-primary" onClick={fetcher}>Search</Button>
+                {/* <Button type = "button" color = "primary" className = "searchButton, btn btn-primary" onClick={fetcher}>Search</Button> */}
+                <Button outline color="info" onClick={fetcher}>Search</Button>
             </div>
             <br></br>
             <br></br>
