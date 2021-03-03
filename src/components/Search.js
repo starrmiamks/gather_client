@@ -48,8 +48,10 @@ const Search = (props) => {
                 <input class="rounded" style={{width: "25%"}} value={recipeSearch} onChange={e => setRecipeSearch(e.target.value)} placeholder="Enter search term" />
                 <br></br>
                 <br></br>
+
                 {/* <Button type = "button" color = "primary" className = "searchButton, btn btn-primary" onClick={fetcher}>Search</Button> */}
                 <Button outline color="info" onClick={fetcher}>Search</Button>
+
             </div>
             <br></br>
             <br></br>
