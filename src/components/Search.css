@@ -1,0 +1,15 @@
+/* #jumboCss {
+    background-image: url(../assets/gatherImage.jpg) !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    max-width: 100% !important;
+    height: auto;
+} */
+
+.Search{
+    font-size: 30em;
+}
+
+.CardTitle {
+    font-size: 20em;
+}

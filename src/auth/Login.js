@@ -13,6 +13,7 @@ const Login = (props) => {
             body: JSON.stringify({user:{email: email, password: password}}),
             headers: new Headers({
                 'Content-Type': 'application/json'
+            
             })
         }).then((response)=> response.json()
         ).then((data)=>{
@@ -27,11 +28,11 @@ const Login = (props) => {
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor="email">Email</Label>
-                    <Input onChange={(e) => setEmail(e.target.value)} name="email" value={email}/>
+                    <Input required onChange={(e) => setEmail(e.target.value)} name="email" value={email}/>
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="password">Password</Label>
-                    <Input onChange={(e) => setPassword(e.target.value)} name="password" value ={password} type='password'/>
+                    <Input required onChange={(e) => setPassword(e.target.value)} name="password" value ={password} type='password'/>
                 </FormGroup>
                 <Button type="submit" color='success'>Login</Button>
             </Form>
