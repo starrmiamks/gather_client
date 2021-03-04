@@ -33,15 +33,13 @@ body{
   width: 100%;
   margin: 0;
   background-color: #f4f5f7;
-background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
 }
 
 
 
 #auth {
-  /* position:; */
-  /* display: flex;
-  justify-content: center; */
+ 
   background: white;
   font-family: 'Julius Sans One', sans-serif;
   width: 400px;
@@ -57,30 +55,3 @@ background-image: url("https://www.transparenttextures.com/patterns/concrete-wal
   width: 100px;
   margin-bottom: 2em;
 } 
-/* .search {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-h1{
-  font-family: 'Julius Sans One', sans-serif;
-}
-/* 
-CardDeck {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  margin-right: 0px;
-} */
-
-Card {
-  max-width: 200px;
-  margin: 0px;
-}
-/* divCard {
-  max-width: 232px;
-  margin: 0px;
-} */

@@ -10,6 +10,7 @@ import {
 import SearchForm from './SearchForm'
 import Background from './Banner';
 import './Search.css';
+// import styled from 'styled-components'
 
 const Search = (props) => {
     const [recipeSearch, setRecipeSearch] = useState("");
@@ -54,10 +55,7 @@ const Search = (props) => {
                 <Button type = "button" color = "primary" className = "searchButton" onClick={fetcher}>Search</Button>
                 
             </div>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+           
                 <Container id="recipe-grid-container">
             <Row>
             {recipes.map(recipe => {
@@ -67,7 +65,8 @@ const Search = (props) => {
                         // style={{width: "25%", height: "60%"}}
                         >
                             <CardImg top width="25%" src={recipe.image} alt="Recipe Image" />
-                            <CardBody  style={{backgroundColor: "white"}}>
+                            <CardBody  //style={{backgroundColor: "white"}}//
+                            >
                                 <CardTitle tag ="h5">{recipe.title}</CardTitle>
                                 <Button onClick={e => addRecipe(`${recipe.id}`, `${recipe.image}`, `${recipe.title}`)}>Add Recipe</Button>
                             </CardBody>
