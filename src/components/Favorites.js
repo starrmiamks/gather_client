@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
     Container, CardImg, CardBody,
     CardTitle, Button, Col, Row
@@ -23,6 +23,7 @@ const Favorites = () => {
 
         // setFavorites()
     },[])
+
 
 
     return (
