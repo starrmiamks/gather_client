@@ -6,7 +6,9 @@
 
 
 /*RecipeCards*/
-img.card-img-top{
+
+
+img.card-img{
     border-radius: 5% 5% 0 0;
     padding: 0px;
     margin: 0px;
