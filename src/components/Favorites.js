@@ -21,18 +21,19 @@ const Favorites = () => {
         setFavorites(tmp)
     }
 
-    const fetchFavorites = () => {
-        fetch('http://localhost:3000/favorites/mine/${favorites.userid}', {
-            method: 'GET',
-            headers: new Headers ({
-                'Content-Type': 'application/json',
-            })
-        }) .then( (res) => res.json())
-          .then((favoritesData) => {
-               setFavorites(favoritesData)
-               console.log(favoritesData);
-           }) 
-    }
+    // const fetchFavorites = () => {
+    //     fetch('http://localhost:3000/favorites/mine/${favorites.userid}', {
+    //         method: 'GET',
+    //         headers: new Headers ({
+    //             'Content-Type': 'application/json',
+    //             Authorization: localStorage.getItem("token"),
+    //         })
+    //     }) .then( (res) => res.json())
+    //       .then((favoritesData) => {
+    //            setFavorites(favoritesData)
+    //            console.log(favoritesData);
+    //        }) 
+    // }
 
     return (
         <div className="container">

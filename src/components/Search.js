@@ -8,6 +8,9 @@ import {
     CardTitle, Button, Col, Row
 } from 'reactstrap';
 import SearchForm from './SearchForm'
+import Background from './Banner';
+import './Search.css';
+// import styled from 'styled-components'
 
 const Search = (props) => {
     const [recipeSearch, setRecipeSearch] = useState("");
@@ -43,30 +46,28 @@ const Search = (props) => {
 
     return (
         <div>
+            <Background/>
             <div className="search">
                 <h1 className="searchBox" >SEARCH RECIPES</h1>
                 <input class="rounded" style={{width: "25%"}} value={recipeSearch} onChange={e => setRecipeSearch(e.target.value)} placeholder="Enter search term" />
                 <br></br>
                 <br></br>
-                <Button type = "button" color = "primary" className = "searchButton, btn btn-primary" onClick={fetcher}>Search</Button>
+                <Button type = "button" color = "primary" className = "searchButton" onClick={fetcher}>Search</Button>
+                
             </div>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+           
                 <Container id="recipe-grid-container">
             <Row>
             {recipes.map(recipe => {
                 return (
                     <Col key={recipe.id} lg="4" sm="6" xs="12" className="grid-column">
-                        
-
                         <div className="resultsCard" 
                         // style={{width: "25%", height: "60%"}}
                         >
                             <CardImg top width="25%" src={recipe.image} alt="Recipe Image" />
-                            <CardBody >
-                                <CardTitle tag="h5">{recipe.title}</CardTitle>
+                            <CardBody  //style={{backgroundColor: "white"}}//
+                            >
+                                <CardTitle tag ="h5">{recipe.title}</CardTitle>
                                 <Button onClick={e => addRecipe(`${recipe.id}`, `${recipe.image}`, `${recipe.title}`)}>Add Recipe</Button>
                             </CardBody>
                         </div>
