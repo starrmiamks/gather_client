@@ -49,8 +49,12 @@ const Search = (props) => {
                 <br></br>
                 <br></br>
 
+                <Button type = "button" color = "primary" className = "searchButton, btn btn-primary" onClick={fetcher}>Search</Button>
+
+
                 {/* <Button type = "button" color = "primary" className = "searchButton, btn btn-primary" onClick={fetcher}>Search</Button> */}
                 <Button outline color="info" onClick={fetcher}>Search</Button>
+
 
             </div>
             <br></br>
