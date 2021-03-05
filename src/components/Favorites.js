@@ -13,24 +13,25 @@ const Favorites = () => {
   useEffect(() => {
     fetch('http://localhost:3000/favorites/mine', {
       method: 'GET',
-      headers: {
+      headers: new Headers ({
         'Content-Type': 'application/json',
         Authorization: localStorage.getItem('token'),
-      }
+      })
     })
       .then(res => (res.json()))
       .then(json => {
         setFavorites(json)
+        console.log(json)
       })
   }, [])
 
   const deleteFav = (id) => {
     fetch(`http://localhost:3000/favorites/delete/${id}`, {
       method: 'DELETE',
-      headers: {
+      headers: new Headers ({
         'Content-Type': 'application/json',
-        'Authorization': localStorage.getItem('token'),
-      }
+        Authorization: localStorage.getItem('token'),
+      })
     }).then(()=>{
       let tmp = favorites.filter(favorite => favorite.id !== id)
       setFavorites(tmp)
@@ -41,10 +42,10 @@ const Favorites = () => {
     console.log(id)
     fetch(`http://localhost:3000/favorites/update/${id}`, {
       method: 'PUT',
-      headers: {
+      headers: new Headers ({
         'Content-Type': 'application/json',
-        'Authorization': localStorage.getItem('token'),
-      },
+        Authorization: localStorage.getItem('token'),
+      }),
       body: JSON.stringify({
         favorites: {
             note: note
