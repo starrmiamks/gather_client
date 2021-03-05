@@ -3,6 +3,8 @@ import Sitebar from './home/Navbar';
 import Auth from './auth/Auth'
 // import Favorites from './components/Favorites'
 import "./App.css"
+import "./components/Search"
+import Search from './components/Search';
 
 function App() {
   const [sessionToken, setSessionToken] = useState('');
@@ -29,9 +31,9 @@ function App() {
     return sessionToken === localStorage.getItem("token") ? 
       <Sitebar token={sessionToken} clickLogout={clearToken} />
     : 
-      <Auth updateToken={updateToken} />
+    <Auth updateToken={updateToken} />
   }
-
+  
   return (
     <div>
       {/* <Sitebar clickLogout={clearToken}/> */}

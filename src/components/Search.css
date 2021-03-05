@@ -1,0 +1,42 @@
+.search{
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.5em;
+    padding: 1em;
+}
+
+
+/*RecipeCards*/
+
+
+img.card-img{
+    border-radius: 5% 5% 0 0;
+    padding: 0px;
+    margin: 0px;
+    border: #cfd4d3;
+    border-style: solid;
+    border-width:  8px 8px 0 8px;
+    height: 260px;
+    }
+
+div.card-body{
+    margin-bottom: 2em;
+    background-color:   #cfd4d3;
+    font-family: 'Julius Sans One', sans-serif;
+    border-radius: 0 0 5% 5%;
+    padding: 1em 0px 0px 0px;
+    height: 130px;
+    
+}
+
+/*NavBar*/
+div.collapse.navbar-collapse{
+    font-family: 'Mukta Vaani', sans-serif;
+    font-size: 18px;
+}
+a.nav-link{
+    padding: 1em;
+}
+
+button.btn.btn-secondary{
+    margin: 1em;
+}

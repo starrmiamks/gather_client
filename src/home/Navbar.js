@@ -15,6 +15,7 @@ import {
     Switch
 } from 'react-router-dom';
 import Search from '../components/Search';
+import About from '../components/About';
 
 //import Login from '../auth/Login';
 //import Register from '../auth/Register';
@@ -62,6 +63,7 @@ const Sitebar = (props) => {
                 <Switch>
                     {/* <Route exact path="/login"><Login /></Route>
                     <Route exact path="/register"><Register /></Route> */}
+                    <Route exact path="/about"><About/></Route>
                     <Route exact path="/search"><Search /></Route>
                     <Route exact path="/favorites"><Favorites /></Route>
                 </Switch>
