@@ -31,7 +31,9 @@ const Search = (props) => {
         fetch(`http://localhost:3000/favorites/add`, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                Authorization: localStorage.getItem('token'),
+                
             },
             body: JSON.stringify({
                 favorites: {
