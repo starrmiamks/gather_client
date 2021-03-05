@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> e4d6488d39de0fdd4a7e5d9e6fbdace45e4cc95b
 import React, {useState, useEffect} from 'react';
 import {
     Container, CardImg, CardBody,
