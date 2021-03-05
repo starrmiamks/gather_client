@@ -6,8 +6,8 @@ import {
     NavbarToggler,
     Nav,
     NavItem,
-    Button
 } from 'reactstrap';
+
 import {
     BrowserRouter,
     Route,
@@ -34,10 +34,11 @@ const Sitebar = (props) => {
         <div>
             <div>
                 <Navbar color="faded" light expand="md">
-                    <NavbarBrand href="/">GATHER</NavbarBrand>
+                    <NavbarBrand>
+                        <Link className="GatherLink">GATHER</Link></NavbarBrand>
                     <NavbarToggler onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
-                        <Nav className="ml-auto" navbar>
+                        <Nav color= "gray" className="ml-auto" navbar>
                             <NavItem>
                                 <Link to="/about/">What is Gather?</Link>
                             </NavItem>
@@ -54,7 +55,7 @@ const Sitebar = (props) => {
                                 <Link to="/favorites/">Favorites</Link>
                             </NavItem>
                             <NavItem>
-                                <Button onClick={props.clickLogout}>Logout</Button>
+                                <Link onClick={props.clickLogout}>Logout</Link>
                             </NavItem>
                         </Nav>
                     </Collapse>

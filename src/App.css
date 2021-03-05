@@ -91,19 +91,51 @@ CardDeck {
 } */
 
 /*navbar*/
+a.navbar-brand{
+  margin: 0;
+  /* font-weight: 16px; */
+}
+nav.navbar.navbar-expand-md.navbar-light.bg-faded{
+margin: 0px;
+}
+
+.navbar {
+  margin: 0px;
+  height: 100px;
+  }
+
 div.collapse.navbar-collapse{
   font-family: 'Mukta Vaani', sans-serif;
   font-size: 18px;
 }
+
+li.nav-item{
+/* padding-top: 1em; */
+}
+
 a.nav-link{
   padding: 1em;
 }
 
 button.btn.btn-secondary{
-margin: em;
-
+margin: 0em;
 } 
 
+a{
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 17px;
+  margin: 10px 5px 5px 5px !important;
+  padding: 20px 0 0 0;
+  color: gray !important;
+  
+  /* padding: 2em, 2em, 2em, 2em; */
+}
+
+a.GatherLink{
+  font-family: 'Julius Sans One', sans-serif;
+  color: black;
+  font-size: 30px;
+}
 /*RecipeCards*/
 img.card-img-top{
     border-radius: 5% 5% 0 0;
@@ -131,6 +163,6 @@ div.card-body{
     font-family: 'Julius Sans One', sans-serif;
     border-radius: 0 0 5% 5%;
     padding: 1em 0em 0em 0em;
-    height: 130px;
+    height: 200px;
     
 } 

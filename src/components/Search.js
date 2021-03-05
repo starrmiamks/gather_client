@@ -12,7 +12,7 @@ import Background from './Banner';
 import './Search.css';
 import '../App.css'
 // import styled from 'styled-components'
-import DisplayRecipe from './DisplayRecipe'
+// import DisplayRecipe from './DisplayRecipe'
 
 const Search = (props) => {
     const [recipeSearch, setRecipeSearch] = useState("");
@@ -32,7 +32,8 @@ const Search = (props) => {
         fetch(`http://localhost:3000/favorites/add`, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": localStorage.getItem('token'),
             },
             body: JSON.stringify({
                 favorites: {
