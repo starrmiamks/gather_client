@@ -22,25 +22,26 @@ const Register = (props) => {
         
     return(
         <div>
+            
+           
             <Container>
-            <h1>Register</h1>            
+            <h1>Gather Sign Up</h1>            
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor="email">Email</Label>
-                    <Input onChange={(e) => setEmail(e.target.value)} name="email" value={email} type='text' pattern='.+@.+.com' title='Must be in standard email format. Ex: youremail@email.com'/>
+                    <Input required onChange={(e) => setEmail(e.target.value)} name="email" value={email} type='text' pattern='.+@.+.com' title='Must be in standard email format. Ex: youremail@email.com'/>
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="password">Password</Label>
-                    <Input onChange={(e) => setPassword(e.target.value)} name="password" value ={password}type='password' pattern='[a-zA-Z0-9]+' minLength='5' maxLength='15'
+                    <Input required onChange={(e) => setPassword(e.target.value)} name="password" value ={password}type='password' pattern='[a-zA-Z0-9]+' minLength='5' maxLength='15'
                 title='Password must contain one number, one capital letter, and be 5-15 characters in length.'/>
                 </FormGroup>
-                <Button type="submit" color='success' >Register</Button>
+                <Button type="submit" color='success' >Sign Up</Button>
                 </Form> 
                 </Container>  
-        </div>
+                </div>
+        
     )
 }
 
-
-
-export default Register
+export default Register;

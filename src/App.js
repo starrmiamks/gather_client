@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Sitebar from './home/Navbar';
 import Auth from './auth/Auth'
-import Favorites from './components/Favorites'
+// import Favorites from './components/Favorites'
 import "./App.css"
+import "./components/Search"
+import Search from './components/Search';
 
 function App() {
   const [sessionToken, setSessionToken] = useState('');
 
   useEffect(() => {
-    if (localStorage.getItem('token')){
+    if (localStorage.getItem('token')) {
       setSessionToken(localStorage.getItem('token'));
     }
   }, [])
@@ -19,21 +21,22 @@ function App() {
     console.log(sessionToken);
   }
 
-  const clearToken =()=> {
+  const clearToken = () => {
     localStorage.clear();
     setSessionToken('')
   }
 
+  
   const protectedViews = () => {
     return sessionToken === localStorage.getItem("token") ? 
-      <Favorites token={sessionToken} />
+      <Sitebar token={sessionToken} clickLogout={clearToken} />
     : 
-      <Auth updateToken={updateToken} />
+    <Auth updateToken={updateToken} />
   }
-
+  
   return (
     <div>
-      <Sitebar clickLogout={clearToken}/>
+      {/* <Sitebar clickLogout={clearToken}/> */}
       {protectedViews ()}
       
     </div>
