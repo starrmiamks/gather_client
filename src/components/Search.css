@@ -5,8 +5,16 @@
 }
 
 
-/*RecipeCards*/
-
+RecipeCards
+img.card-img-top{
+    border-radius: 5% 5% 0 0;
+    padding: 0px;
+    margin: 0px;
+    border: #cfd4d3;
+    border-style: solid;
+    border-width:  8px 8px 0 8px;
+    height: 260px;  
+}
 
 img.card-img{
     border-radius: 5% 5% 0 0;
@@ -28,15 +36,19 @@ div.card-body{
     
 }
 
-/*NavBar*/
+NavBar
 div.collapse.navbar-collapse{
     font-family: 'Mukta Vaani', sans-serif;
     font-size: 18px;
 }
 a.nav-link{
-    padding: 1em;
+    padding: 1em; 
 }
 
 button.btn.btn-secondary{
     margin: 1em;
+} 
+
+button.addButton.btn.btn-secondary{
+    margin: 0 0 2em 0;
 }

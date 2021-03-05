@@ -10,6 +10,7 @@ import {
 import SearchForm from './SearchForm'
 import Background from './Banner';
 import './Search.css';
+import '../App.css'
 // import styled from 'styled-components'
 import DisplayRecipe from './DisplayRecipe'
 
@@ -68,10 +69,9 @@ const Search = (props) => {
                         // style={{width: "25%", height: "60%"}}
                         >
                             <CardImg src={recipe.image} alt="Recipe Image" />
-                            <CardBody  //style={{backgroundColor: "white"}}//
-                            >
+                            <CardBody>  
                                 <CardTitle tag ="h5">{recipe.title}</CardTitle>
-                                <Button onClick={e => addRecipe(`${recipe.id}`, `${recipe.image}`, `${recipe.title}`)}>Add Recipe</Button>
+                                <Button className="addButton" onClick={e => addRecipe(`${recipe.id}`, `${recipe.image}`, `${recipe.title}`)}>Add Recipe</Button>
                             </CardBody>
                         </div>
                        
