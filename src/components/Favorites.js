@@ -30,7 +30,7 @@ const Favorites = () => {
       method: 'DELETE',
       headers: new Headers ({
         'Content-Type': 'application/json',
-        Authorization: localStorage.getItem('token'),
+        'Authorization': localStorage.getItem('token'),
       })
     }).then(()=>{
       let tmp = favorites.filter(favorite => favorite.id !== id)
@@ -44,7 +44,7 @@ const Favorites = () => {
       method: 'PUT',
       headers: new Headers ({
         'Content-Type': 'application/json',
-        Authorization: localStorage.getItem('token'),
+        'Authorization': localStorage.getItem('token'),
       }),
       body: JSON.stringify({
         favorites: {
@@ -53,6 +53,7 @@ const Favorites = () => {
       }) 
     })
       .then(res => console.log(res))
+      
   }
 
   return (
@@ -68,8 +69,10 @@ const Favorites = () => {
                   <CardBody >
                     <CardTitle tag="h5">{favorite.title}</CardTitle>
                     <Button onClick={() => deleteFav(favorite.id)}>Delete</Button>
-                    <CardSubtitle>Note:<input class="rounded" onChange={e => setNote(e.target.value)}/></CardSubtitle>
-                    <Button onClick={ e => createNote(note, favorite.id)}>Add Note</Button>
+                    <CardSubtitle>Note: {favorite.note}</CardSubtitle>
+                    <br></br>
+                    <CardSubtitle><input class="rounded" onChange={e => setNote(e.target.value)} placeholder="enter text for note"/></CardSubtitle>
+                    <Button onClick={ e => createNote(note, favorite.id)}>Add/Update Note</Button>
                   </CardBody>
                 </div>
               </Col>
