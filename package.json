@@ -7,13 +7,13 @@
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.3",
     "bootstrap": "^4.6.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-linkify": "^1.0.0-alpha",
+    "react": "16.8",
+    "react-dom": "16.8",
+    "react-is": "16.8",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "reactstrap": "^8.9.0",
-    "styled-components": "^5.2.1",
+    "styled-components": "^5.0.0",
     "web-vitals": "^1.1.0"
   },
   "scripts": {

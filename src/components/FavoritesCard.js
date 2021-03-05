@@ -1,3 +1,5 @@
+import React from 'react';
+import search from './Search';
 import Favorites from './Favorites';
 
 const FavoritesCard = () => {

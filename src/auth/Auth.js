@@ -27,7 +27,6 @@ const Auth = (props) => {
              username={email}
              password={password}
              />     
-
                 ):      
                 (
                   <Login updateToken={props.updateToken}
@@ -35,10 +34,8 @@ const Auth = (props) => {
                   setUsername={setEmail}
                   username={email}
                   password={password}/>
-                   
-                
                 ) }
-                {/* <Button className="btn" color="success" size="small" onClick={toggle ? handleSubmit: handleHotdog}>Submit</Button> */}
+               
 
                 <a href className={toggle ? "link" : ""} onClick={() => setToggle(!toggle)}>
                   {toggle
