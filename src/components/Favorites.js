@@ -2,8 +2,8 @@
 import React, {useState, useEffect} from 'react';
 
 import {
-  Container, CardImg, CardBody,
-  CardTitle, Button, Col, Row
+    Container, CardImg, CardBody,
+    CardTitle, Col, Row
 } from 'reactstrap';
 
 const Favorites = () => {
