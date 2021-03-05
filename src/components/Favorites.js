@@ -39,6 +39,7 @@ const Favorites = () => {
                             <CardImg top width="25%" src={favorite.imageURL} alt="Recipe Image" />
                             <CardBody >
                                 <CardTitle tag="h5">{favorite.title}</CardTitle>
+                                <Button>Delete</Button>
                             </CardBody>
                         </div>
                        
