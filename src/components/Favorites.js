@@ -26,6 +26,7 @@ const Favorites = () => {
     },[])
 
 
+
     return (
         <div className="card">
            <Container> 
