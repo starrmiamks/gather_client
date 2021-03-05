@@ -1,5 +1,6 @@
 
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
+
 import {
   Container, CardImg, CardBody,
   CardTitle, Button, Col, Row
@@ -51,7 +52,6 @@ const Favorites = () => {
                     <Button onClick={e => deleteFav(e, favorite.id)}>Delete</Button>
                   </CardBody>
                 </div>
-
               </Col>
             )
           })}
