@@ -1,0 +1,15 @@
+h1.FavTitle{
+    margin: 20px !important;
+    font-family: 'Julius Sans One', sans-serif;
+    text-align: center;
+    margin: 8px;
+}
+
+div.card-body{
+    margin-bottom: 2em;
+    background-color:   #cfd4d3;
+    font-family: 'Julius Sans One', sans-serif;
+    border-radius: 0 0 5% 5%;
+    padding: 1em 0em 0em 0em;
+    height: 300px;
+}
