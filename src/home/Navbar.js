@@ -33,15 +33,19 @@ const Sitebar = (props) => {
                         <Link to="/gather/" className="GatherLink">GATHER</Link></NavbarBrand>
                     <NavbarToggler onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
-                        <Nav color= "gray" className="ml-auto" navbar>
+                        <Nav color="gray" className="ml-auto" navbar>
                             <NavItem>
-                                <Link to="/search/">Search</Link>
+                                <Link to="/search/" className="Link">Search</Link>
                             </NavItem>
+                            <br></br>
+                            <br></br>
                             <NavItem>
-                                <Link to="/favorites/">Favorites</Link>
+                                <Link to="/favorites/"className="Link">Favorites</Link>
                             </NavItem>
+                            <br></br>
+                            <br></br>
                             <NavItem>
-                                <Link onClick={props.clickLogout}>Logout</Link>
+                                <Link onClick={props.clickLogout} className="Link" >Logout</Link>
                             </NavItem>
                         </Nav>
                     </Collapse>

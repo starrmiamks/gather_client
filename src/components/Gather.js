@@ -45,6 +45,8 @@ const Banner = styled.div`
 
             <p>Here at gather we want to help you connect with your people.  Invite your friends and family to all participate in a dinner of your design.  Everyone can choose a dish to bring and Gather will provide the recipes.  </p>
 
+            <p>Because life is great when we gather!</p>
+
       
       </Text>  
          

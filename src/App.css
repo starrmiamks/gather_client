@@ -39,22 +39,13 @@ h1{
 } 
 
 /*navbar*/
-a.navbar-brand{
-  margin: 0;
-  /* font-weight: 16px; */
-}
-nav.navbar.navbar-expand-md.navbar-light.bg-faded{
-margin: 0px;
-}
-
-.navbar {
-  margin: 0px;
-  height: 100px;
-  }
-
-div.collapse.navbar-collapse{
+div.collapse.navbar-collaps{
   font-family: 'Mukta Vaani', sans-serif;
   font-size: 18px;
+  align-items:flex-end;
+  /* margin-left: 30px;
+  margin-right: 30px; */
+  padding: none;
 }
 
 a.nav-link{
@@ -62,34 +53,64 @@ a.nav-link{
 }
 
 button.btn.btn-secondary{
-margin: 0em;
+margin: em;
 } 
 
-a{
-  font-family: 'Tenor Sans', sans-serif;
-  font-size: 17px;
-  margin: 10px 5px 5px 5px !important;
-  padding: 20px 0 0 0;
+.navbar-nav > li{
+  padding-left:30px;
+  /* padding-right:30px; */
+  align-content: flex-end;
+  font-size: 20px;
   color: gray !important;
+  Padding-top: 10px;
+}
+
+/* a.Link{
+  font-family: 'Tenor Sans', sans-serif;
+  color: gray !important;
+  margin: 0, 10px, 10px, 10px !important;
+  padding: 0, 10px, 10px, 10px;
   
-  /* padding: 2em, 2em, 2em, 2em; */
+} */
+
+li.nav-item{
+  font-family: 'Tenor Sans', sans-serif;
+  color: gray !important;
+  margin: 0, 10px, 10px, 10px !important;
+  padding: 0, 10px, 10px, 10px;
 }
 
 a.GatherLink{
   font-family: 'Julius Sans One', sans-serif;
-  color: black;
   font-size: 30px;
+  color: gray;
+  /* margin: 5px; */
 }
+
+a.Link{
+  color: gray;
+}
+
 /*RecipeCards*/
-img.card-img-top{
+img.card-img{
     border-radius: 5% 5% 0 0;
     padding: 0px;
     margin: 0px;
     border: #cfd4d3;
     border-style: solid;
     border-width:  8px 8px 0 8px;
-    height: 260px;  
-}
+    height: 260px;
+    }
+
+div.card-body{
+    margin-bottom: 2em;
+    background-color:   #cfd4d3;
+    font-family: 'Julius Sans One', sans-serif;
+    border-radius: 0 0 5% 5%;
+    padding: 1em 0em 0em 0em;
+    height: 260px;
+    
+} 
 
 div.card{
   border: none;
