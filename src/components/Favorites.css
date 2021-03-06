@@ -5,7 +5,17 @@ h1.FavTitle{
     margin: 8px;
 }
 
-div.card-body{
+img.FavImg.card-img-top{
+    border-radius: 5% 5% 0 0;
+    padding: 0px;
+    margin: 0px;
+    border: #cfd4d3;
+    border-style: solid;
+    border-width:  8px 8px 0 8px;
+    height: 260px;
+    }
+
+div.FavBody.card-body{
     margin-bottom: 2em;
     background-color:   #cfd4d3;
     font-family: 'Julius Sans One', sans-serif;
