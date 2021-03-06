@@ -70,25 +70,17 @@ a.nav-link{
 }
 
 button.btn.btn-secondary{
-margin: em;
+margin: 10px;
+width: fit-content;
 } 
 
-.navbar-nav > li{
-  padding-left:30px;
-  /* padding-right:30px; */
+.navbar-nav > li{  
+  padding-left:30px;  
   align-content: flex-end;
   font-size: 20px;
   color: gray !important;
   Padding-top: 10px;
 }
-
-/* a.Link{
-  font-family: 'Tenor Sans', sans-serif;
-  color: gray !important;
-  margin: 0, 10px, 10px, 10px !important;
-  padding: 0, 10px, 10px, 10px;
-  
-} */
 
 li.nav-item{
   font-family: 'Tenor Sans', sans-serif;
@@ -101,7 +93,7 @@ a.GatherLink{
   font-family: 'Julius Sans One', sans-serif;
   font-size: 30px;
   color: gray;
-  /* margin: 5px; */
+  
 }
 
 a.Link{
@@ -125,7 +117,7 @@ div.card-body{
     font-family: 'Julius Sans One', sans-serif;
     border-radius: 0 0 5% 5%;
     padding: 1em 0em 0em 0em;
-    height: 260px;
+    height: 180px;
     
 } 
 
