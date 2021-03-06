@@ -15,7 +15,6 @@ h1{
   color: black;
   font-size: 30px;
   text-align: center;
-  /* margin: 1em; */
   padding: 10px;
   border: none
 }
@@ -42,8 +41,6 @@ div.collapse.navbar-collaps{
   font-family: 'Mukta Vaani', sans-serif;
   font-size: 18px;
   align-items:flex-end;
-  /* margin-left: 30px;
-  margin-right: 30px; */
   padding: none;
 }
 
@@ -75,7 +72,6 @@ a.GatherLink{
   font-family: 'Julius Sans One', sans-serif;
   font-size: 30px;
   color: gray;
-  
 }
 
 a.Link{
@@ -91,7 +87,7 @@ img.card-img{
     border-style: solid;
     border-width:  8px 8px 0 8px;
     height: 260px;
-    }
+}
 
 div.card-body{
     margin-bottom: 2em;
@@ -99,8 +95,7 @@ div.card-body{
     font-family: 'Julius Sans One', sans-serif;
     border-radius: 0 0 5% 5%;
     padding: 1em 0em 0em 0em;
-    height: 180px;
-    
+    height: 180px; 
 } 
 
 div.card{
