@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
-
   Container, CardImg, CardBody,
   CardTitle, Button, Col, Row, CardSubtitle
 } from 'reactstrap';
@@ -13,7 +12,7 @@ const Favorites = () => {
   useEffect(() => {
     fetch('http://localhost:3000/favorites/mine', {
       method: 'GET',
-      headers: new Headers ({
+      headers: new Headers({
         'Content-Type': 'application/json',
         Authorization: localStorage.getItem('token'),
       })
@@ -28,11 +27,11 @@ const Favorites = () => {
   const deleteFav = (id) => {
     fetch(`http://localhost:3000/favorites/delete/${id}`, {
       method: 'DELETE',
-      headers: new Headers ({
+      headers: new Headers({
         'Content-Type': 'application/json',
         'Authorization': localStorage.getItem('token'),
       })
-    }).then(()=>{
+    }).then(() => {
       let tmp = favorites.filter(favorite => favorite.id !== id)
       setFavorites(tmp)
     })
@@ -42,26 +41,20 @@ const Favorites = () => {
     console.log(id)
     fetch(`http://localhost:3000/favorites/update/${id}`, {
       method: 'PUT',
-      headers: new Headers ({
+      headers: new Headers({
         'Content-Type': 'application/json',
         'Authorization': localStorage.getItem('token'),
       }),
       body: JSON.stringify({
         favorites: {
-            note: note
+          note: note
         }
-      }) 
+      })
     })
       .then(res => console.log(res))
-      window.location.reload(false)
-      
-  }
+    window.location.reload(false)
 
-  // function showFav(e) {
-  //   const seeFav = e.target.value;
-  //   console.log(seeFav);
-  //   setNote(note => [note, seeFav]);
-  // }
+  }
 
   return (
     <div className="card">
@@ -73,13 +66,13 @@ const Favorites = () => {
               <Col key={favorite.id} lg="4" sm="6" xs="12" className="grid-column">
                 <div className="resultsCard"
                 >
-                  <CardImg top width="25%" src={favorite.imageURL} alt="Recipe Image" className="FavImg"/>
+                  <CardImg top width="25%" src={favorite.imageURL} alt="Recipe Image" className="FavImg" />
                   <CardBody className="FavBody" >
                     <CardTitle tag="h5">{favorite.title}</CardTitle>
                     <Button onClick={() => deleteFav(favorite.id)}>Delete</Button>
                     <CardSubtitle>Note: {favorite.note}</CardSubtitle>
                     <br></br>
-                    <CardSubtitle><input class="rounded" onChange={e => setNote(e.target.value)} placeholder="enter text for note"/></CardSubtitle>
+                    <CardSubtitle><input class="rounded" onChange={e => setNote(e.target.value)} placeholder="enter text for note" /></CardSubtitle>
                     <Button onClick={e => createNote(note, favorite.id)}>Add/Update Note</Button>
                   </CardBody>
                 </div>
