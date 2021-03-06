@@ -124,3 +124,8 @@ div.card-body{
 div.card{
   border: none;
 }
+
+div.card-subtitle{
+  margin-bottom: 20px;
+  height: 30px;
+}
