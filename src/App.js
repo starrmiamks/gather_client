@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Sitebar from './home/Navbar';
 import Auth from './auth/Auth'
-// import Favorites from './components/Favorites'
 import "./App.css"
 import "./components/Search"
 // import Search from './components/Search';

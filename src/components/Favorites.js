@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-
 import {
 
   Container, CardImg, CardBody,
@@ -54,8 +53,15 @@ const Favorites = () => {
       }) 
     })
       .then(res => console.log(res))
+      window.location.reload(false)
       
   }
+
+  // function showFav(e) {
+  //   const seeFav = e.target.value;
+  //   console.log(seeFav);
+  //   setNote(note => [note, seeFav]);
+  // }
 
   return (
     <div className="card">
@@ -74,7 +80,7 @@ const Favorites = () => {
                     <CardSubtitle>Note: {favorite.note}</CardSubtitle>
                     <br></br>
                     <CardSubtitle><input class="rounded" onChange={e => setNote(e.target.value)} placeholder="enter text for note"/></CardSubtitle>
-                    <Button onClick={ e => createNote(note, favorite.id)}>Add/Update Note</Button>
+                    <Button onClick={e => createNote(note, favorite.id)}>Add/Update Note</Button>
                   </CardBody>
                 </div>
               </Col>

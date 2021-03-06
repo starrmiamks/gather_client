@@ -1,6 +1,4 @@
 import React from 'react';
-// import { Jumbotron as Jumbo, Button, Container, Jumbotron } from 'reactstrap';
-//import gatherImage from "../assets/gatherImage.jpeg";
 import styled from 'styled-components';
 
 

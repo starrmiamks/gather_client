@@ -1,8 +1,4 @@
 import React, { useState } from 'react';
-// import {
-//     Navbar,
-//     NavbarBrand,
-// } from 'reactstrap';
 import {
     Container, CardImg, CardBody,
     CardTitle, Button, Col, Row
@@ -11,8 +7,7 @@ import SearchForm from './SearchForm'
 import Background from './Banner';
 import './Search.css';
 import '../App.css'
-// import styled from 'styled-components'
-import DisplayRecipe from './DisplayRecipe'
+
 
 const Search = (props) => {
     const [recipeSearch, setRecipeSearch] = useState("");
