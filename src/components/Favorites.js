@@ -4,13 +4,14 @@ import {
   CardTitle, Button, Col, Row, CardSubtitle
 } from 'reactstrap';
 import '../components/Favorites.css'
+import APIURL from '../helpers/environment';
 
 const Favorites = () => {
   const [favorites, setFavorites] = useState([])
   const [note, setNote] = useState("")
 
   useEffect(() => {
-    fetch('http://localhost:3000/favorites/mine', {
+    fetch(`${APIURL}/favorites/mine`, {
       method: 'GET',
       headers: new Headers({
         'Content-Type': 'application/json',
@@ -25,7 +26,7 @@ const Favorites = () => {
   }, [])
 
   const deleteFav = (id) => {
-    fetch(`http://localhost:3000/favorites/delete/${id}`, {
+    fetch(`${APIURL}/favorites/delete/${id}`, {
       method: 'DELETE',
       headers: new Headers({
         'Content-Type': 'application/json',
@@ -39,7 +40,7 @@ const Favorites = () => {
 
   const createNote = (note, id) => {
     console.log(id)
-    fetch(`http://localhost:3000/favorites/update/${id}`, {
+    fetch(`${APIURL}/favorites/update/${id}`, {
       method: 'PUT',
       headers: new Headers({
         'Content-Type': 'application/json',

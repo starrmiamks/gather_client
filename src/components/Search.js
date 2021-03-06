@@ -7,6 +7,9 @@ import SearchForm from './SearchForm'
 import Background from './Banner';
 import './Search.css';
 import '../App.css'
+import APIURL from '../helpers/environment';
+
+
 
 const Search = (props) => {
     const [recipeSearch, setRecipeSearch] = useState("");
@@ -23,7 +26,7 @@ const Search = (props) => {
 
     const addRecipe = (recipeId, imageURL, title) => {
         console.log({ recipeId, imageURL, title })
-        fetch(`http://localhost:3000/favorites/add`, {
+        fetch(`${APIURL}/favorites/add`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
