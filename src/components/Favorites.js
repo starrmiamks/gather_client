@@ -73,8 +73,8 @@ const Favorites = () => {
               <Col key={favorite.id} lg="4" sm="6" xs="12" className="grid-column">
                 <div className="resultsCard"
                 >
-                  <CardImg top width="25%" src={favorite.imageURL} alt="Recipe Image" />
-                  <CardBody >
+                  <CardImg top width="25%" src={favorite.imageURL} alt="Recipe Image" className="FavImg"/>
+                  <CardBody className="FavBody" >
                     <CardTitle tag="h5">{favorite.title}</CardTitle>
                     <Button onClick={() => deleteFav(favorite.id)}>Delete</Button>
                     <CardSubtitle>Note: {favorite.note}</CardSubtitle>
