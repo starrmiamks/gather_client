@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-
 import {
     Container, CardImg, CardBody,
     CardTitle, Col, Button, Row
@@ -39,6 +38,7 @@ const Favorites = () => {
   return (
     <div className="card">
       <Container>
+        <h1 className ="Fav" >My Favorites</h1>
         <Row>
           {favorites.map(favorite => {
             return (
