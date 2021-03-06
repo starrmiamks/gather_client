@@ -10,6 +10,7 @@ import {
 import SearchForm from './SearchForm'
 import Background from './Banner';
 import './Search.css';
+import '../App.css'
 // import styled from 'styled-components'
 import DisplayRecipe from './DisplayRecipe'
 
@@ -31,7 +32,9 @@ const Search = (props) => {
         fetch(`http://localhost:3000/favorites/add`, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                Authorization: localStorage.getItem('token'),
+                
             },
             body: JSON.stringify({
                 favorites: {
@@ -52,11 +55,6 @@ const Search = (props) => {
                 <input class="rounded" style={{width: "25%"}} value={recipeSearch} onChange={e => setRecipeSearch(e.target.value)} placeholder="Enter search term" />
                 <br></br>
                 <br></br>
-{/* 
-                <Button type = "button" color = "primary" className = "searchButton, btn btn-primary" onClick={fetcher}>Search</Button> */}
-
-
-                {/* <Button type = "button" color = "primary" className = "searchButton, btn btn-primary" onClick={fetcher}>Search</Button> */}
                 <Button outline color="info" onClick={fetcher}>Search</Button>
 
 
@@ -68,13 +66,11 @@ const Search = (props) => {
                 return (
                     <Col key={recipe.id} lg="4" sm="6" xs="12" className="grid-column">
                         <div className="resultsCard" 
-                        // style={{width: "25%", height: "60%"}}
                         >
                             <CardImg src={recipe.image} alt="Recipe Image" />
-                            <CardBody  //style={{backgroundColor: "white"}}//
-                            >
+                            <CardBody>  
                                 <CardTitle tag ="h5">{recipe.title}</CardTitle>
-                                <Button onClick={e => addRecipe(`${recipe.id}`, `${recipe.image}`, `${recipe.title}`)}>Add Recipe</Button>
+                                <Button className="addButton" onClick={e => addRecipe(`${recipe.id}`, `${recipe.image}`, `${recipe.title}`)}>Add Recipe</Button>
                             </CardBody>
                         </div>
                        

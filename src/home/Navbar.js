@@ -6,22 +6,17 @@ import {
     NavbarToggler,
     Nav,
     NavItem,
-    Button,
-    NavLink
 } from 'reactstrap';
+
 import {
     BrowserRouter,
     Route,
-    Switch
+    Switch, 
+    Link
 } from 'react-router-dom';
 import Search from '../components/Search';
-import About from '../components/About';
-
-//import Login from '../auth/Login';
-//import Register from '../auth/Register';
+import Gather from '../components/Gather';
 import Favorites from '../components/Favorites';
-
-
 
 const Sitebar = (props) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -30,45 +25,39 @@ const Sitebar = (props) => {
         setIsOpen(newIsOpen)
     }
     return (
+        <BrowserRouter>
         <div>
             <div>
                 <Navbar color="faded" light expand="md">
-                    <NavbarBrand href="/">GATHER</NavbarBrand>
+                    <NavbarBrand>
+                        <Link to="/gather/" className="GatherLink">GATHER</Link></NavbarBrand>
                     <NavbarToggler onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
-                        <Nav className="ml-auto" navbar>
+                        <Nav color="gray" className="ml-auto" navbar>
                             <NavItem>
-                                <NavLink href="/about/">What is Gather?</NavLink>
+                                <Link to="/search/" className="Link">Search</Link>
                             </NavItem>
-                            {/* <NavItem>
-                                <NavLink href="/register/">Register</NavLink>
+                            <br></br>
+                            <br></br>
+                            <NavItem>
+                                <Link to="/favorites/"className="Link">Favorites</Link>
                             </NavItem>
+                            <br></br>
+                            <br></br>
                             <NavItem>
-                                <NavLink href="/login/">Login</NavLink>
-                            </NavItem> */}
-                            <NavItem>
-                                <NavLink href="/search/">Search</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="/favorites/">Favorites</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <Button onClick={props.clickLogout}>Logout</Button>
+                                <Link onClick={props.clickLogout} className="Link" >Logout</Link>
                             </NavItem>
                         </Nav>
                     </Collapse>
                 </Navbar>
             </div>
-            <BrowserRouter>
                 <Switch>
-                    {/* <Route exact path="/login"><Login /></Route>
-                    <Route exact path="/register"><Register /></Route> */}
-                    <Route exact path="/about"><About/></Route>
+                    <Route exact path="/gather"><Gather/></Route>
                     <Route exact path="/search"><Search /></Route>
                     <Route exact path="/favorites"><Favorites /></Route>
                 </Switch>
-            </BrowserRouter>
         </div>
+            </BrowserRouter>
     );
 };
 

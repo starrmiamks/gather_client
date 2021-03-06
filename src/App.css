@@ -55,39 +55,80 @@ body{
   width: 100px;
   margin-bottom: 2em;
 } 
-/* .search {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+/*navbar*/
+div.collapse.navbar-collaps{
+  font-family: 'Mukta Vaani', sans-serif;
+  font-size: 18px;
+  align-items:flex-end;
+  /* margin-left: 30px;
+  margin-right: 30px; */
+  padding: none;
+}
+a.nav-link{
+  padding: 1em;
 }
 
-h1{
+button.btn.btn-secondary{
+margin: em;
+} 
+
+.navbar-nav > li{
+  padding-left:30px;
+  /* padding-right:30px; */
+  align-content: flex-end;
+  font-size: 20px;
+  color: gray !important;
+  Padding-top: 10px;
+}
+
+/* a.Link{
+  font-family: 'Tenor Sans', sans-serif;
+  color: gray !important;
+  margin: 0, 10px, 10px, 10px !important;
+  padding: 0, 10px, 10px, 10px;
+  
+} */
+
+li.nav-item{
+  font-family: 'Tenor Sans', sans-serif;
+  color: gray !important;
+  margin: 0, 10px, 10px, 10px !important;
+  padding: 0, 10px, 10px, 10px;
+}
+
+a.GatherLink{
   font-family: 'Julius Sans One', sans-serif;
-}
-/* 
-CardDeck {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  margin-right: 0px;
-} */
-
-Card {
-  max-width: 200px;
-  margin: 0px;
-}
-/* divCard {
-  max-width: 232px;
-  margin: 0px;
-} */
-
-img {
-  margin: auto;
-  margin-top: 20px;
-  max-width: 100px;
-  max-height: 100px;
+  font-size: 30px;
+  color: gray;
+  /* margin: 5px; */
 }
 
+a.Link{
+  color: gray;
+}
 
+/*RecipeCards*/
+img.card-img{
+    border-radius: 5% 5% 0 0;
+    padding: 0px;
+    margin: 0px;
+    border: #cfd4d3;
+    border-style: solid;
+    border-width:  8px 8px 0 8px;
+    height: 260px;
+    }
+
+div.card-body{
+    margin-bottom: 2em;
+    background-color:   #cfd4d3;
+    font-family: 'Julius Sans One', sans-serif;
+    border-radius: 0 0 5% 5%;
+    padding: 1em 0em 0em 0em;
+    height: 260px;
+    
+} 
+
+div.card{
+  border: none;
+}
