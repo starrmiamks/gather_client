@@ -3,7 +3,6 @@ import Sitebar from './home/Navbar';
 import Auth from './auth/Auth'
 import "./App.css"
 import "./components/Search"
-// import Search from './components/Search';
 
 function App() {
   const [sessionToken, setSessionToken] = useState('');
@@ -25,19 +24,15 @@ function App() {
     setSessionToken('')
   }
 
-  
   const protectedViews = () => {
-    return sessionToken === localStorage.getItem("token") ? 
-      <Sitebar token={sessionToken} clickLogout={clearToken} />
-    : 
-    <Auth updateToken={updateToken} />
+    return sessionToken === localStorage.getItem("token") ?
+      <Sitebar token={sessionToken} clickLogout={clearToken} /> :
+      <Auth updateToken={updateToken} />
   }
-  
+
   return (
     <div>
-      {/* <Sitebar clickLogout={clearToken}/> */}
-      {protectedViews ()}
-      
+      {protectedViews()}
     </div>
   );
 }
