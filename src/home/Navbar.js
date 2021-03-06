@@ -6,8 +6,8 @@ import {
     NavbarToggler,
     Nav,
     NavItem,
-    Button
 } from 'reactstrap';
+
 import {
     BrowserRouter,
     Route,
@@ -15,13 +15,8 @@ import {
     Link
 } from 'react-router-dom';
 import Search from '../components/Search';
-import About from '../components/About';
-
-//import Login from '../auth/Login';
-//import Register from '../auth/Register';
+import Gather from '../components/Gather';
 import Favorites from '../components/Favorites';
-
-
 
 const Sitebar = (props) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -34,36 +29,30 @@ const Sitebar = (props) => {
         <div>
             <div>
                 <Navbar color="faded" light expand="md">
-                    <NavbarBrand href="/">GATHER</NavbarBrand>
+                    <NavbarBrand>
+                        <Link to="/gather/" className="GatherLink">GATHER</Link></NavbarBrand>
                     <NavbarToggler onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
-                        <Nav className="ml-auto" navbar>
+                        <Nav color="gray" className="ml-auto" navbar>
                             <NavItem>
-                                <Link to="/about/">What is Gather?</Link>
+                                <Link to="/search/" className="Link">Search</Link>
                             </NavItem>
-                            {/* <NavItem>
-                                <Link to="/register/">Register</Link>
+                            <br></br>
+                            <br></br>
+                            <NavItem>
+                                <Link to="/favorites/"className="Link">Favorites</Link>
                             </NavItem>
+                            <br></br>
+                            <br></br>
                             <NavItem>
-                                <Link to="/login/">Login</Link>
-                            </NavItem> */}
-                            <NavItem>
-                                <Link to="/search/">Search</Link>
-                            </NavItem>
-                            <NavItem>
-                                <Link to="/favorites/">Favorites</Link>
-                            </NavItem>
-                            <NavItem>
-                                <Button onClick={props.clickLogout}>Logout</Button>
+                                <Link onClick={props.clickLogout} className="Link" >Logout</Link>
                             </NavItem>
                         </Nav>
                     </Collapse>
                 </Navbar>
             </div>
                 <Switch>
-                    {/* <Route exact path="/login"><Login /></Route>
-                    <Route exact path="/register"><Register /></Route> */}
-                    <Route exact path="/about"><About/></Route>
+                    <Route exact path="/gather"><Gather/></Route>
                     <Route exact path="/search"><Search /></Route>
                     <Route exact path="/favorites"><Favorites /></Route>
                 </Switch>

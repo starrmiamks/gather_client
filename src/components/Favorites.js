@@ -5,6 +5,7 @@ import {
   Container, CardImg, CardBody,
   CardTitle, Button, Col, Row, CardSubtitle
 } from 'reactstrap';
+import '../components/Favorites.css'
 
 const Favorites = () => {
   const [favorites, setFavorites] = useState([])
@@ -59,6 +60,7 @@ const Favorites = () => {
   return (
     <div className="card">
       <Container>
+        <h1 className="FavTitle">My Favorites</h1>
         <Row>
           {favorites.map(favorite => {
             return (

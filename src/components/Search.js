@@ -66,7 +66,6 @@ const Search = (props) => {
                 return (
                     <Col key={recipe.id} lg="4" sm="6" xs="12" className="grid-column">
                         <div className="resultsCard" 
-                        // style={{width: "25%", height: "60%"}}
                         >
                             <CardImg src={recipe.image} alt="Recipe Image" />
                             <CardBody>  
