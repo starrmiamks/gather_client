@@ -5,7 +5,11 @@ h1.FavTitle{
     margin: 8px;
 }
 
-img.FavImg.card-img-top{
+div.card{
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+}
+
+  img.FavImg.card-img-top{
     border-radius: 5% 5% 0 0;
     padding: 0px;
     margin: 0px;
@@ -23,3 +27,4 @@ div.FavBody.card-body{
     padding: 1em 0em 0em 0em;
     height: 300px;
 }
+
