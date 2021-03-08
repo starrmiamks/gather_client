@@ -9,7 +9,8 @@ import APIURL from '../helpers/environment';
 const Favorites = () => {
   const [favorites, setFavorites] = useState([])
   const [note, setNote] = useState("")
-
+  
+  
   useEffect(() => {
     fetch(`${APIURL}/favorites/mine`, {
       method: 'GET',
@@ -54,7 +55,6 @@ const Favorites = () => {
     })
       .then(res => console.log(res))
     window.location.reload(false)
-
   }
 
   return (

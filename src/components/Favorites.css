@@ -3,13 +3,10 @@ h1.FavTitle{
     font-family: 'Julius Sans One', sans-serif;
     text-align: center;
     margin: 8px;
+    background-color: none;
 }
 
-div.card{
-  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
-}
-
-  img.FavImg.card-img-top{
+img.FavImg.card-img-top{
     border-radius: 5% 5% 0 0;
     padding: 0px;
     margin: 0px;
@@ -17,6 +14,7 @@ div.card{
     border-style: solid;
     border-width:  8px 8px 0 8px;
     height: 260px;
+    background-color: none;
     }
 
 div.FavBody.card-body{
@@ -26,5 +24,12 @@ div.FavBody.card-body{
     border-radius: 0 0 5% 5%;
     padding: 1em 0em 0em 0em;
     height: 300px;
+}
+
+
+
+div.card{
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png")!important;
+    
 }
 
