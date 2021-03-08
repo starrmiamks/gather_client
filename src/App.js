@@ -5,6 +5,7 @@ import "./App.css"
 import "./components/Search"
 
 function App() {
+  
   const [sessionToken, setSessionToken] = useState('');
 
   useEffect(() => {
